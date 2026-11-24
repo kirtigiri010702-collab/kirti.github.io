@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kirti | Independent Web Designer</title>
+<meta name="description" content="Thoughtful, modern and elegant websites designed by Kirti.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --snow: #DCE0E8;
+  --mist: #8EA1AE;
+  --pine: #27363F;
+  --berry: #6B212C;
+  --branch: #685652;
+  --silver: #BEB3AC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--snow);
+  color: var(--pine);
+  font-family: 'DM Sans', sans-serif;
+}
+
+a { text-decoration: none; color: inherit; }
+
+nav {
+  background: var(--pine);
+  color: var(--snow);
+  padding: 24px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  letter-spacing: 3px;
+}
+
+nav .links {
+  display: flex;
+  gap: 25px;
+  font-size: 13px;
+}
+
+nav a:hover { color: var(--silver); }
+
+.hero {
+  min-height: 620px;
+  padding: 110px 10%;
+  background: var(--pine);
+  color: var(--snow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "✳";
+  position: absolute;
+  right: 7%;
+  top: 15%;
+  font-size: 260px;
+  color: #ffffff0b;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--silver);
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(55px, 9vw, 105px);
+  font-weight: 500;
+  line-height: 1.12;
+  max-width: 850px;
+}
+
+.hero h1 em {
+  color: var(--silver);
+  font-weight: 500;
+}
+
+.hero p {
+  max-width: 510px;
+  line-height: 1.9;
+  margin: 28px 0;
+  color: var(--snow);
+  opacity: .85;
+}
+
+.button {
+  display: inline-block;
+  background: var(--berry);
+  color: white;
+  padding: 15px 25px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  width: fit-content;
+  transition: .3s;
+}
+
+.button:hover {
+  background: var(--silver);
+  color: var(--pine);
+  transform: translateY(-3px);
+}
+
+.section {
+  padding: 100px 10%;
+}
+
+.label {
+  color: var(--berry);
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(35px, 5vw, 57px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text {
+  line-height: 2;
+  color: var(--branch);
+  margin-top: 20px;
+}
+
+.about-art {
+  min-height: 300px;
+  background: var(--mist);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.about-art span {
+  font-family: 'Playfair Display', serif;
+  font-size: 85px;
+  color: var(--snow);
+  font-style: italic;
+}
+
+.services {
+  background: var(--silver);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 45px;
+}
+
+.service-card {
+  background: var(--snow);
+  padding: 35px 25px;
+  min-height: 210px;
+  transition: .3s;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  background: white;
+}
+
+.number {
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  color: var(--berry);
+}
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  margin: 20px 0 12px;
+}
+
+.service-card p {
+  color: var(--branch);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.projects {
+  background: var(--pine);
+  color: var(--snow);
+}
+
+.projects .label { color: var(--silver); }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.project-card {
+  background: var(--snow);
+  color: var(--pine);
+  padding: 35px;
+  min-height: 260px;
+}
+
+.project-card:first-child {
+  background: var(--berry);
+  color: white;
+}
+
+.project-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  margin: 25px 0 12px;
+}
+
+.project-card p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.tag {
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: .75;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 22px;
+  font-size: 12px;
+  border-bottom: 1px solid currentColor;
+}
+
+.contact {
+  background: var(--silver);
+  text-align: center;
+}
+
+.contact h2 {
+  max-width: 700px;
+  margin: auto;
+}
+
+.contact p {
+  margin: 25px auto;
+  color: var(--branch);
+  line-height: 1.8;
+}
+
+.contact .button {
+  margin: 10px auto;
+}
+
+footer {
+  background: var(--pine);
+  color: var(--snow);
+  padding: 30px 8%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+
+footer span { color: var(--silver); }
+
+@media(max-width: 700px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav .links {
+    gap: 13px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: 540px;
+    padding: 75px 8%;
+  }
+
+  .about, .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section { padding: 70px 8%; }
+
+  .hero::after { font-size: 150px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">KIRTI.</div>
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Work</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">INDEPENDENT WEB DESIGNER · INDIA</div>
+  <h1>Digital experiences,<br><em>beautifully crafted.</em></h1>
+  <p>
+    Hi, I'm Kirti. I create modern, thoughtful and
+    mobile-friendly websites for businesses that
+    want to make a memorable first impression.
+  </p>
+  <a class="button" href="#projects">EXPLORE MY WORK ↗</a>
+</section>
+
+<section class="section about" id="about">
+  <div>
+    <div class="label">01 — A LITTLE ABOUT ME</div>
+    <h2>Design with a little more meaning.</h2>
+    <p class="about-text">
+      I'm Kirti, a creative aspiring web designer
+      who loves turning ideas into beautiful digital
+      experiences. I believe a good website should
+      look elegant, feel effortless and work smoothly
+      on every device.
+    </p>
+  </div>
+  <div class="about-art">
+    <span>Creativity<br>has no limits.</span>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="label">02 — WHAT I DO</div>
+  <h2>Thoughtful design.<br>Practical solutions.</h2>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="number">01</div>
+      <h3>Business Websites</h3>
+      <p>Elegant online experiences for local shops, brands and businesses.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="number">02</div>
+      <h3>Restaurant Websites</h3>
+      <p>Beautiful menus, special offers and easy ways for customers to connect.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="number">03</div>
+      <h3>Portfolio Websites</h3>
+      <p>Clean and personal websites for teachers, creators and professionals.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section projects" id="projects">
+  <div class="label">03 — SELECTED CONCEPTS</div>
+  <h2>Ideas brought to life.</h2>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="tag">PROJECT 01 · CONCEPT</div>
+      <h3>The Pizza Box</h3>
+      <p>
+        A modern restaurant website concept featuring
+        a digital menu, combo offers and an easy
+        customer ordering experience.
+      </p>
+      <div class="project-link">DEMO COMING SOON ↗</div>
+    </div>
+
+    <div class="project-card">
+      <div class="tag">PROJECT 02 · UPCOMING</div>
+      <h3>The Learning Space</h3>
+      <p>
+        A clean and welcoming website concept for
+        a coaching and study centre, designed to
+        make learning information easy to explore.
+      </p>
+      <div class="project-link">COMING SOON ↗</div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="label">04 — LET'S CONNECT</div>
+  <h2>Have an idea?<br>Let's make it happen.</h2>
+  <p>
+    Have a project in mind? I'd love to hear
+    what you're imagining.
+  </p>
+  <a class="button" href="mailto:YOUR_EMAIL@example.com">
+    SAY HELLO ↗
+  </a>
+</section>
+
+<footer>
+  <div>© 2026 KIRTI. <span>Designed with creativity.</span></div>
+  <div>MAUDAHA, INDIA · WEB DESIGN</div>
+</footer>
+
+</body>
+</html>
